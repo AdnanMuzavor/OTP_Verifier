@@ -17,6 +17,8 @@ app.use(express.json())
 //Use all the APIs
 app.use("/api/user/otp",UserRouter)
 
+//Connect to DB
+require("./DB/Connection/conn")
 
 //Listen to the port
 const port = process.env.PORT || 5000;
