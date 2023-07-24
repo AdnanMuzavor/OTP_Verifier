@@ -5,7 +5,7 @@ const Login = () => {
   const [otp, setotp] = useState("");
   const [Typedotp, setTypedotp] = useState("");
   const [otpsent, setotpsent] = useState(false);
-  const [message, setmessage] = useState("");
+  const [message, setmessage] = useState("Message");
 
   // => Function to Take Email as input and get OTP in Email
   const GetOTP = async (e) => {
@@ -53,53 +53,67 @@ const Login = () => {
     }
   };
 
-  
   return (
     <>
-      <div className="login_wrapper">
+    <div className="container">
+      <div className="login_wrapper row">
         <div className="login_header">
           <h3>Login</h3>
         </div>
-        <div className="form_Wrapper">
-          <form action="#">
-            {otpsent ? (
-              <>
-                <div className="formele">
-                  <label htmlFor="em">Enter your OTP</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="em"
-                    value={Typedotp}
-                    onChange={(e) => setTypedotp(e.target.value)}
-                  />
-                </div>
-                <div className="formele">
-                  <button onClick={(e) => verifyOTP(e)}>Submit OTP</button>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="formele">
-                  <label htmlFor="em">Enter your email address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="em"
-                    value={email}
-                    onChange={(e) => setemail(e.target.value)}
-                  />
-                </div>
-                <div className="formele">
-                  <button onClick={(e) => GetOTP(e)}>Get OTP</button>
-                </div>
-              </>
-            )}
-          </form>
+        <div className="lhs col-md-6 col-lg-6">
+          <div className="img_wrapper">
+            <img
+              src={
+                "https://www.web2sms.co.in/wp-content/uploads/2020/05/otpa.png"
+              }
+              alt="Image"
+              className="img-fluid img"
+            />
+          </div>
         </div>
-        <div className="message_wrapper">
-          <div className="message">{message}</div>
+        <div className="lhs col-md-6 col-lg-6 ">
+          <div className="form_Wrapper">
+            <form action="#">
+              {otpsent ? (
+                <>
+                  <div className="formele">
+                    <label htmlFor="em">Enter your OTP</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="em"
+                      value={Typedotp}
+                      onChange={(e) => setTypedotp(e.target.value)}
+                    />
+                  </div>
+                  <div className="formele">
+                    <button onClick={(e) => verifyOTP(e)}>Submit OTP</button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="formele">
+                    <label htmlFor="em">Enter your email address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="em"
+                      value={email}
+                      onChange={(e) => setemail(e.target.value)}
+                    />
+                  </div>
+                  <div className="formele">
+                    <button onClick={(e) => GetOTP(e)}>Get OTP</button>
+                  </div>
+                </>
+              )}
+            </form>
+          </div>
+          <div className="message_wrapper">
+            <div className="message">{message}</div>
+          </div>
         </div>
+      </div>
       </div>
     </>
   );
