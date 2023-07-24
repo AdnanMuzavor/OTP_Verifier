@@ -28,8 +28,8 @@
 }
 
 .img{
-  width: 20rem;
-  height: 10rem;
+  width: 12rem;
+  height: 4rem;
 }
 
 .lhs{
@@ -70,4 +70,35 @@
   align-items: center;
   border-radius: 0.4rem;
   color: blue;
+}
+
+/*Navbar*/
+.navwrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 2px solid blue;
+  background-color: aqua;
+  border-radius: 0.8rem;
+}
+
+.Link{
+  text-decoration: none !important;
+  color: blue;
+}
+
+.navele{
+  border: 2px solid blue;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  
+}
+.navele:hover{
+  background-color: blue;
+  border: 2px solid aqua;
+  color: aqua !important;
+}
+.navele:hover .Link{
+  color: aqua;
 }
